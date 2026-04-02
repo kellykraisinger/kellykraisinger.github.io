@@ -3,132 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kelly Kraisinger — Digital Marketer & All-Around Enthusiast</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Kelly Kraisinger</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --teal: #3D8C8C; --teal-dark: #2A6060; --teal-mid: #4FA8A8;
-    --teal-light: #E4F2F2; --teal-faint: #F2F9F9;
-    --cream: #FDFAF5; --warm-white: #FFFFFF;
-    --dark: #1C2626; --mid: #4A5E5E; --muted: #8AA0A0; --rule: #D8E8E8;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; font-size: 16px; }
+:root{
+  --gold:#C9A96E;--gold-2:#DFC088;--gold-3:#EDD49A;
+  --gold-pale:#FBF7EC;--gold-faint:#FDFAF2;
+  --brown:#4A4238;--brown-2:#7A7268;
+  --ink:#5C5248;--ink-dark:#3A3530;
+  --mid:#6A6258;--muted:#B0AAA0;--rule:#EDE5D4;
+  --cream:#FEFCF8;--warm:#FEFAF2;--sand:#FAF5E8;--white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink-dark);line-height:1.65;-webkit-font-smoothing:antialiased;}
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(253,250,245,0.92); backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--rule); padding: 0 64px; height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--teal-dark); }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.25s; }
-  .nav-links a:hover { color: var(--teal); }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(254,252,248,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);}
+.nlogo{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--gold);letter-spacing:0.3px;}
+.nlinks{display:flex;gap:28px;list-style:none;}
+.nlinks a{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nlinks a:hover{color:var(--gold);}
 
-  .hero { min-height: 100vh; display: flex; align-items: center; background: var(--cream); }
-  .hero-left { padding: 140px 64px 80px; max-width: 800px; }
-  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 20px; }
-  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 6vw, 88px); font-weight: 700; line-height: 1.0; color: var(--teal-dark); margin-bottom: 8px; letter-spacing: -1px; }
-  .hero-name em { font-style: italic; color: var(--teal-mid); }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; font-style: italic; color: var(--mid); margin-bottom: 32px; }
-  .hero-bio { font-size: 16px; font-weight: 300; color: var(--mid); line-height: 1.85; max-width: 480px; margin-bottom: 40px; }
-  .hero-bio strong { color: var(--teal-dark); font-weight: 500; }
-  .hero-contact { display: flex; flex-direction: column; gap: 10px; }
-  .hero-contact a { font-size: 14px; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: color 0.2s; }
-  .hero-contact a:hover { color: var(--teal); }
-  .contact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-mid); flex-shrink: 0; }
+.hero{min-height:100vh;background:var(--warm);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.13) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-150px;left:40%;width:500px;height:500px;background:radial-gradient(circle,rgba(201,169,110,0.07) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
 
-  .section { padding: 96px 64px; max-width: 1100px; margin: 0 auto; }
-  .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 10px; }
-  .section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 4vw, 60px); font-weight: 700; line-height: 1.05; color: var(--teal-dark); margin-bottom: 12px; letter-spacing: -0.5px; }
-  .section-h2 em { font-style: italic; color: var(--teal-mid); }
-  .section-intro { font-size: 16px; font-weight: 300; color: var(--mid); max-width: 560px; line-height: 1.8; margin-bottom: 56px; }
-  .full-rule { border: none; border-top: 1px solid var(--rule); margin: 0 64px; }
+.hl{padding:130px 64px 80px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;border-right:1px solid var(--rule);}
+.hl-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:36px;}
+.hl-badge::before{content:'';width:28px;height:1px;background:var(--gold-3);}
+.hn{font-family:'Outfit',sans-serif;font-size:clamp(72px,8vw,120px);font-weight:900;line-height:1.0;letter-spacing:-3px;margin-bottom:0;}
+.hn .first{color:var(--ink);display:block;}
+.hn .last{color:var(--gold);display:block;}
+.htag{font-family:'Outfit',sans-serif;font-size:clamp(14px,1.3vw,17px);font-weight:400;color:var(--muted);margin-top:28px;line-height:1.6;}
+.hl-remote{display:inline-flex;align-items:center;gap:8px;margin-top:32px;background:var(--gold-pale);border:1px solid var(--gold-3);padding:8px 18px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:0.5px;color:var(--brown);}
+.hl-remote::before{content:'✦';font-size:10px;color:var(--gold);}
 
-  .career-item { display: grid; grid-template-columns: 200px 1fr; gap: 0 56px; padding: 48px 0; border-bottom: 1px solid var(--rule); }
-  .career-item:last-child { border-bottom: none; }
-  .ci-meta { padding-top: 4px; }
-  .ci-dates { font-size: 13px; font-weight: 500; color: var(--teal); margin-bottom: 4px; }
-  .ci-loc { font-size: 12px; color: var(--muted); }
-  .ci-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--dark); margin-bottom: 4px; line-height: 1.2; }
-  .ci-company { font-size: 14px; font-weight: 500; color: var(--teal-mid); margin-bottom: 16px; }
-  .ci-body { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.85; }
-  .ci-body p { margin-bottom: 12px; }
-  .ci-body ul { list-style: none; padding: 0; margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
-  .ci-body ul li { padding-left: 18px; position: relative; font-size: 14.5px; }
-  .ci-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal-mid); font-size: 12px; top: 4px; }
-  .ci-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .chip { font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; padding: 5px 14px; border-radius: 999px; background: var(--teal-light); color: var(--teal-dark); border: 1px solid var(--rule); }
+.hr{padding:130px 56px 80px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
+.hr-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;}
+.hr-bio{font-size:18px;font-weight:300;line-height:1.9;color:var(--mid);margin-bottom:48px;max-width:400px;}
+.hr-bio strong{color:var(--gold);font-weight:600;}
+.hcontacts{display:flex;flex-direction:column;gap:14px;}
+.hc{font-size:14px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s;}
+.hc:hover{color:var(--gold);}
+.hc-dot{width:4px;height:4px;border-radius:50%;background:var(--gold-3);flex-shrink:0;}
 
-  .beyond-wrap { background: var(--teal-faint); padding: 96px 0; }
-  .beyond-inner { max-width: 1100px; margin: 0 auto; padding: 0 64px; }
-  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .bcard { background: var(--warm-white); border-radius: 16px; padding: 32px; border: 1px solid var(--rule); border-top: 3px solid var(--teal-light); transition: box-shadow 0.25s, transform 0.25s; }
-  .bcard:hover { box-shadow: 0 12px 40px rgba(42,96,96,0.08); transform: translateY(-4px); }
-  .bcard.accent-top { border-top-color: var(--teal); }
-  .bcard.accent-top-mid { border-top-color: var(--teal-mid); }
-  .bcard.featured { background: var(--teal-dark); border-color: var(--teal-dark); border-top-color: var(--teal-dark); grid-column: span 2; display: flex; gap: 36px; align-items: flex-start; }
-  .bcard.featured:hover { box-shadow: 0 16px 50px rgba(42,96,96,0.2); }
-  .bcard-icon { font-size: 28px; margin-bottom: 16px; display: block; }
-  .bcard.featured .bcard-icon { font-size: 40px; margin-bottom: 0; flex-shrink: 0; margin-top: 4px; }
-  .bcard h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--teal-dark); margin-bottom: 6px; line-height: 1.2; }
-  .bcard.featured h3 { color: white; font-size: 24px; }
-  .bcard-dates { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-  .bcard.featured .bcard-dates { color: rgba(255,255,255,0.4); }
-  .bcard p { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; }
-  .bcard.featured p { color: rgba(255,255,255,0.72); }
-  .bcard a { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal-light); padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
-  .bcard a:hover { color: var(--teal-dark); border-color: var(--teal); }
-  .bcard.featured a { color: var(--teal-light); border-color: rgba(255,255,255,0.2); }
-  .bcard.featured a:hover { color: white; border-color: white; }
+.ticker{background:var(--gold);overflow:hidden;padding:12px 0;}
+.ticker-track{display:flex;white-space:nowrap;animation:tick 40s linear infinite;width:max-content;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ti{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:0 20px;display:inline-flex;align-items:center;gap:20px;}
+.ti.pop{color:white;}
+.ti::after{content:'·';color:rgba(255,255,255,0.3);margin-left:20px;}
 
-  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .sgroup { background: var(--warm-white); border-radius: 12px; padding: 24px; border: 1px solid var(--rule); border-top: 3px solid var(--teal-light); transition: border-top-color 0.2s, box-shadow 0.2s; }
-  .sgroup:hover { border-top-color: var(--teal); box-shadow: 0 8px 24px rgba(42,96,96,0.07); }
-  .sgroup h4 { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 10px; }
-  .sgroup p { font-size: 13.5px; font-weight: 300; color: var(--mid); line-height: 1.65; }
+.section{max-width:1100px;margin:0 auto;padding:96px 56px;}
+.ey{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.ey::before{content:'';width:24px;height:1px;background:var(--gold-3);}
+.sh2{font-family:'Outfit',sans-serif;font-size:clamp(44px,5vw,68px);font-weight:800;line-height:1.0;color:var(--ink);letter-spacing:-2px;margin-bottom:16px;}
+.sh2 em{font-style:normal;color:var(--gold);}
+.si{font-size:16px;font-weight:300;color:var(--mid);max-width:500px;line-height:1.85;margin-bottom:60px;}
+.divider{border:none;border-top:1px solid var(--rule);margin:0 56px;}
 
-  .contact-wrap { background: var(--teal-dark); padding: 100px 64px; text-align: center; }
-  .contact-inner { max-width: 600px; margin: 0 auto; }
-  .contact-wrap .section-eyebrow { color: rgba(255,255,255,0.4); margin-bottom: 12px; }
-  .contact-wrap .section-h2 { color: white; margin-bottom: 16px; }
-  .contact-wrap .section-intro { color: rgba(255,255,255,0.55); margin: 0 auto 48px; max-width: 480px; }
-  .contact-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .cbtn { padding: 14px 32px; border-radius: 999px; font-size: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-  .cbtn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-  .cbtn-white { background: white; color: var(--teal-dark); }
-  .cbtn-outline { border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.8); }
-  .cbtn-outline:hover { border-color: white; color: white; }
+.ci{display:grid;grid-template-columns:180px 1fr;gap:0 52px;padding:52px 0;border-bottom:1px solid var(--rule);}
+.ci:last-child{border-bottom:none;}
+.ci-d{font-size:12px;font-weight:600;color:var(--gold-2);margin-bottom:3px;}
+.ci-l{font-size:11px;color:var(--muted);}
+.ci-t{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--ink-dark);line-height:1.1;margin-bottom:5px;letter-spacing:-0.5px;}
+.ci-c{font-size:11px;font-weight:600;color:var(--gold);margin-bottom:18px;letter-spacing:1px;text-transform:uppercase;}
+.ci-b{font-size:15px;font-weight:300;color:var(--mid);line-height:1.85;}
+.ci-b p{margin-bottom:12px;}
+.ci-b ul{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:10px;}
+.ci-b li{padding-left:20px;position:relative;font-size:14.5px;}
+.ci-b li::before{content:'';position:absolute;left:0;top:10px;width:10px;height:1px;background:var(--gold-3);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
+.chip{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;background:var(--gold-faint);color:var(--brown);border-radius:2px;border:1px solid var(--rule);}
 
-  footer { background: var(--dark); padding: 28px 64px; display: flex; justify-content: space-between; align-items: center; }
-  footer .fn { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.6); }
-  footer p { font-size: 13px; color: rgba(255,255,255,0.25); }
+.remote-strip{background:var(--brown);padding:64px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.rs-text h3{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:white;letter-spacing:-0.5px;margin-bottom:8px;}
+.rs-text p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.7;}
+.rs-pills{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0;}
+.rs-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:9px 20px;border-radius:999px;white-space:nowrap;}
 
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+.bsec{background:var(--sand);padding:96px 0;}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.bc{background:var(--white);padding:36px 32px;border-radius:4px;border:1px solid var(--rule);transition:box-shadow .25s,transform .25s,border-color .25s;}
+.bc:hover{box-shadow:0 12px 40px rgba(201,169,110,0.12);transform:translateY(-4px);border-color:var(--gold-3);}
+.bc.wide{grid-column:span 2;background:var(--gold-faint);border-color:var(--gold-3);}
+.bc.wide:hover{box-shadow:0 12px 40px rgba(201,169,110,0.18);}
+.bc-icon{font-size:22px;margin-bottom:18px;display:block;}
+.bc h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:var(--ink-dark);margin-bottom:6px;letter-spacing:-0.2px;}
+.bc.wide h3{color:var(--gold);}
+.bc-dt{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.bc.wide .bc-dt{color:var(--gold-2);}
+.bc p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.75;}
+.bc a{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-3);padding-bottom:1px;transition:color .2s;}
+.bc a:hover{color:var(--brown);}
 
-  @media (max-width: 900px) {
-    nav { padding: 0 24px; } .nav-links { display: none; }
-    .hero-left { padding: 100px 24px 60px; }
-    .section { padding: 64px 24px; }
-    .beyond-inner { padding: 0 24px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .bcard.featured { grid-column: span 1; flex-direction: column; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    .career-item { grid-template-columns: 1fr; gap: 12px; }
-    .full-rule { margin: 0 24px; }
-    .contact-wrap { padding: 64px 24px; }
-    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
-  }
+.sksec{background:var(--cream);padding:96px 0;}
+.skgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.sg{background:var(--white);padding:28px 24px;border-radius:4px;border:1px solid var(--rule);border-top:2px solid var(--gold-3);transition:border-top-color .2s,box-shadow .2s;}
+.sg:hover{border-top-color:var(--gold);box-shadow:0 4px 20px rgba(201,169,110,0.1);}
+.sg h4{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.sg p{font-size:13px;font-weight:300;color:var(--mid);line-height:1.65;}
+
+.csec{background:var(--warm);padding:120px 56px;text-align:center;position:relative;overflow:hidden;}
+.csec::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,110,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.csec .ey{justify-content:center;position:relative;z-index:1;}
+.csec .sh2{position:relative;z-index:1;}
+.csec .si{margin:0 auto 52px;position:relative;z-index:1;}
+.cbtns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
+.cbtn{padding:16px 44px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block;border-radius:2px;}
+.cb-gold{background:var(--gold);color:white;}
+.cb-gold:hover{background:var(--gold-2);}
+.cb-gh{border:1.5px solid var(--rule);color:var(--mid);}
+.cb-gh:hover{border-color:var(--gold-3);color:var(--gold);}
+
+footer{background:var(--sand);padding:28px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);}
+.fn{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--gold);letter-spacing:-0.2px;}
+footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}.nlinks{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hl{padding:100px 24px 48px;}
+  .hr{padding:48px 24px 72px;border-top:1px solid var(--rule);}
+  .section{padding:64px 24px;}
+  .bgrid{grid-template-columns:1fr;}
+  .bc.wide{grid-column:span 1;}
+  .skgrid{grid-template-columns:repeat(2,1fr);}
+  .ci{grid-template-columns:1fr;gap:10px;}
+  .divider{margin:0 24px;}
+  .remote-strip{flex-direction:column;padding:48px 24px;}
+  .csec{padding:80px 24px;}
+  footer{padding:24px;flex-direction:column;gap:8px;text-align:center;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-name">Kelly Kraisinger</div>
-  <ul class="nav-links">
+  <div class="nlogo">Kelly Kraisinger</div>
+  <ul class="nlinks">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#beyond">Beyond Work</a></li>
@@ -138,212 +154,184 @@
 </nav>
 
 <section class="hero" id="about">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Digital Marketing &amp; eCommerce &middot; Nashville, TN</div>
-    <h1 class="hero-name">Kelly<br><em>Kraisinger</em></h1>
-    <div class="hero-title">Marketer. Collaborator. Enthusiast of Most Things.</div>
-    <p class="hero-bio">I'm a digital marketer with <strong>10+ years of experience</strong> helping lifestyle brands grow. I show up with energy, curiosity, and a genuine love for the work &mdash; whether that's building affiliate programs, running cross-functional campaigns, or finding the story in the data.</p>
-    <div class="hero-contact">
-      <a href="mailto:kellykraisinger@gmail.com"><div class="contact-dot"></div>kellykraisinger@gmail.com</a>
-      <a href="tel:7245166872"><div class="contact-dot"></div>724-516-6872</a>
-      <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank"><div class="contact-dot"></div>linkedin.com/in/kelly-kraisinger</a>
+  <div class="hl">
+    <div class="hl-badge">Nashville, TN &middot; Digital Marketing &amp; eCommerce</div>
+    <h1 class="hn">
+      <span class="first">Kelly</span>
+      <span class="last">Kraisinger</span>
+    </h1>
+    <div class="htag">Marketer &nbsp;&middot;&nbsp; Collaborator &nbsp;&middot;&nbsp; Enthusiast of Most Things</div>
+    <div class="hl-remote">Available for remote &amp; hybrid roles</div>
+  </div>
+  <div class="hr">
+    <div class="hr-label">About</div>
+    <p class="hr-bio">I'm a digital marketer with <strong>10+ years of experience</strong> helping brands grow. I show up with energy, curiosity, and a genuine love for the work, whether that's building affiliate programs, running cross-functional campaigns, or finding the story in the data.</p>
+    <div class="hcontacts">
+      <a href="mailto:kellykraisinger@gmail.com" class="hc"><div class="hc-dot"></div>kellykraisinger@gmail.com</a>
+      <a href="tel:7245166872" class="hc"><div class="hc-dot"></div>724-516-6872</a>
+      <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="hc"><div class="hc-dot"></div>linkedin.com/in/kelly-kraisinger</a>
     </div>
   </div>
 </section>
 
-<hr class="full-rule">
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti pop">Stand-Up Comedy</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti pop">10+ Years Digital Marketing</span><span class="ti">Nashville, TN</span><span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti pop">Stand-Up Comedy</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti pop">10+ Years Digital Marketing</span><span class="ti">Nashville, TN</span>
+  </div>
+</div>
+
+<hr class="divider">
 
 <div class="section" id="experience">
-  <div class="section-eyebrow reveal">Career</div>
-  <h2 class="section-h2 reveal">The Day <em>Job(s)</em></h2>
-  <p class="section-intro reveal">10+ years of making things happen at brands people actually care about.</p>
+  <div class="ey reveal">Career</div>
+  <h2 class="sh2 reveal">The Day <em>Job(s)</em></h2>
+  <p class="si reveal">10+ years of making things happen at brands people actually care about.</p>
   <div>
-    <div class="career-item reveal">
-      <div class="ci-meta"><div class="ci-dates">Nov 2021 &ndash; Mar 2026</div><div class="ci-loc">Nashville, TN</div></div>
+    <div class="ci reveal">
+      <div><div class="ci-d">Nov 2021 &ndash; Mar 2026</div><div class="ci-l">Nashville, TN</div></div>
       <div>
-        <div class="ci-title">Digital Marketing Manager</div>
-        <div class="ci-company">Scott Brothers Global &middot; Property Brothers / HGTV</div>
-        <div class="ci-body">
-          <p>Four years working behind the scenes for one of HGTV's most recognizable brands &mdash; the Property Brothers. Think: 150,000 monthly website sessions, a 100K subscriber newsletter, affiliate programs across major retail platforms, and yours truly keeping it all moving.</p>
+        <div class="ci-t">Digital Marketing Manager</div>
+        <div class="ci-c">Scott Brothers Global &middot; Property Brothers (HGTV)</div>
+        <div class="ci-b">
+          <p>Four years working behind the scenes for one of HGTV's most recognizable brands. Think: 150,000 monthly website sessions, a 100,000 subscriber newsletter, affiliate programs across major retail platforms, and yours truly keeping it all moving.</p>
           <ul>
-            <li>Built and grew the affiliate marketing program across Amazon, CJ, Skimlinks, Impact, and Awin &mdash; coordinating with account reps, training internal teams, and overseeing paid retail campaigns up to $20,000.</li>
+            <li>Built and grew the affiliate marketing program across Amazon, CJ, Skimlinks, Impact, and Awin, coordinating with account reps, training internal teams, and overseeing paid retail campaigns up to $20,000.</li>
             <li>Introduced and maintained SEO strategies for drewandjonathan.com, the Property Brothers' primary fan and lifestyle destination.</li>
-            <li>Analyzed content performance data and provided recommendations to the Property Brothers' social team (12M+ followers) on what to promote to drive web sessions and product sales.</li>
+            <li>Analyzed content performance data and provided recommendations to the Property Brothers' social team (12 million+ followers) on what to promote to drive web sessions and product sales.</li>
             <li>Worked closely with the Editorial Team on newsletter strategy for 100,000+ subscribers, turning performance data into insights that shaped content decisions.</li>
-            <li>Managed full project lifecycle across agency engagements, internal campaigns, and a complete website redesign &mdash; keeping stakeholders aligned and timelines on track.</li>
+            <li>Managed full project lifecycle across agency engagements, internal campaigns, and a complete website redesign, keeping stakeholders aligned and timelines on track.</li>
             <li>Built and maintained four brand websites including scottbrothersglobal.com and drewandjonathan.com.</li>
           </ul>
-          <div class="ci-chips">
-            <span class="chip">Affiliate Marketing</span><span class="chip">SEO</span><span class="chip">Email Strategy</span>
-            <span class="chip">Analytics</span><span class="chip">CMS Management</span><span class="chip">Project Management</span>
-          </div>
+          <div class="chips"><span class="chip">Affiliate Marketing</span><span class="chip">SEO</span><span class="chip">Email Strategy</span><span class="chip">Analytics</span><span class="chip">CMS Management</span><span class="chip">Project Management</span></div>
         </div>
       </div>
     </div>
-
-    <div class="career-item reveal">
-      <div class="ci-meta"><div class="ci-dates">Oct 2020 &ndash; Nov 2021</div><div class="ci-loc">Nashville, TN</div></div>
+    <div class="ci reveal">
+      <div><div class="ci-d">Oct 2020 &ndash; Nov 2021</div><div class="ci-l">Nashville, TN</div></div>
       <div>
-        <div class="ci-title">Digital Content Strategy Director</div>
-        <div class="ci-company">K2forma</div>
-        <div class="ci-body">
-          <p>Led cross-functional digital strategy for multiple clients as both strategic director and primary Account Manager. Kept campaigns, timelines, and clients all pointed in the right direction simultaneously &mdash; which is basically an Olympic sport.</p>
-          <div class="ci-chips">
-            <span class="chip">Client Strategy</span><span class="chip">Account Management</span>
-            <span class="chip">Email Marketing</span><span class="chip">SEO</span>
-          </div>
+        <div class="ci-t">Digital Content Strategy Director</div>
+        <div class="ci-c">K2forma</div>
+        <div class="ci-b">
+          <p>Led cross-functional digital strategy for multiple clients as both strategic director and primary Account Manager. Kept campaigns, timelines, and clients all pointed in the right direction simultaneously, which is basically an Olympic sport.</p>
+          <div class="chips"><span class="chip">Client Strategy</span><span class="chip">Account Management</span><span class="chip">Email Marketing</span><span class="chip">SEO</span></div>
         </div>
       </div>
     </div>
-
-    <div class="career-item reveal">
-      <div class="ci-meta"><div class="ci-dates">May 2019 &ndash; Oct 2020</div><div class="ci-loc">Lebanon, TN</div></div>
+    <div class="ci reveal">
+      <div><div class="ci-d">May 2019 &ndash; Oct 2020</div><div class="ci-l">Lebanon, TN</div></div>
       <div>
-        <div class="ci-title">Digital Marketing Specialist</div>
-        <div class="ci-company">Cracker Barrel Old Country Store</div>
-        <div class="ci-body">
-          <p>Coordinated email campaigns to 1.5 million subscribers and managed content updates for crackerbarrel.com, reaching approximately 2 million monthly sessions. Helped bring the 'Cracker Barrel Finds' multi-channel campaign to life across email, web, and social. Yes, I can sell a rocking chair and a jar of pickles in the same email. Yes, I'm proud of it.</p>
-          <div class="ci-chips">
-            <span class="chip">Email Marketing</span><span class="chip">Content Management</span>
-            <span class="chip">Multi-Channel Campaigns</span><span class="chip">SEO</span>
-          </div>
+        <div class="ci-t">Digital Marketing Specialist</div>
+        <div class="ci-c">Cracker Barrel Old Country Store</div>
+        <div class="ci-b">
+          <p>Coordinated email campaigns to 1.5 million subscribers and managed content updates for crackerbarrel.com, reaching approximately 2 million monthly sessions. Helped bring the Cracker Barrel Finds multi-channel campaign to life across email, web, and social. Yes, I can sell a rocking chair and a jar of pickles in the same email. Yes, I'm proud of it.</p>
+          <div class="chips"><span class="chip">Email Marketing</span><span class="chip">Content Management</span><span class="chip">Multi-Channel Campaigns</span><span class="chip">SEO</span></div>
         </div>
       </div>
     </div>
-
-    <div class="career-item reveal">
-      <div class="ci-meta"><div class="ci-dates">Dec 2016 &ndash; May 2019</div><div class="ci-loc">Lebanon, TN</div></div>
+    <div class="ci reveal">
+      <div><div class="ci-d">Dec 2016 &ndash; May 2019</div><div class="ci-l">Lebanon, TN</div></div>
       <div>
-        <div class="ci-title">eCommerce Analyst</div>
-        <div class="ci-company">Cracker Barrel Old Country Store</div>
-        <div class="ci-body">
-          <p>Updated the eCommerce site daily using Google Analytics insights, sales data, trends, and seasonal priorities to keep content sharp and relevant. Managed marketing emails to eCommerce customers, upgraded transactional email templates, and oversaw product copy alongside a small team of writers. Ran the blog with features built around product themes, trends, and seasons. Curated product boxes for influencers to feature on Instagram, helping elevate the brand beyond the store. The analytics nerd era officially begins here.</p>
-          <div class="ci-chips">
-            <span class="chip">Google Analytics</span><span class="chip">eCommerce</span><span class="chip">UX Copywriting</span>
-            <span class="chip">Email Marketing</span><span class="chip">Influencer Relations</span><span class="chip">Blog Management</span>
-          </div>
+        <div class="ci-t">eCommerce Analyst</div>
+        <div class="ci-c">Cracker Barrel Old Country Store</div>
+        <div class="ci-b">
+          <p>Updated the eCommerce site daily using Google Analytics insights, sales data, trends, and seasonal priorities. Managed marketing emails, upgraded transactional templates, oversaw product copy alongside a small team of writers, ran the blog, and curated influencer product boxes for Instagram. The analytics nerd era officially begins here.</p>
+          <div class="chips"><span class="chip">Google Analytics</span><span class="chip">eCommerce</span><span class="chip">UX Copywriting</span><span class="chip">Email Marketing</span><span class="chip">Blog Management</span></div>
         </div>
       </div>
     </div>
-
-    <div class="career-item reveal">
-      <div class="ci-meta"><div class="ci-dates">2007 &ndash; 2016</div><div class="ci-loc">Memphis, TN</div></div>
+    <div class="ci reveal">
+      <div><div class="ci-d">2007 &ndash; 2016</div><div class="ci-l">Memphis, TN</div></div>
       <div>
-        <div class="ci-title">Development &amp; Events Manager</div>
-        <div class="ci-company">BRIDGES &amp; Church Health &middot; Nonprofit</div>
-        <div class="ci-body">
-          <p>Nearly a decade in nonprofit fundraising across two Memphis organizations doing genuinely important work. At Church Health &mdash; which provides healthcare for the uninsured &mdash; I planned fundraising events, managed a young professional volunteer committee, oversaw the monthly giving program, assisted with Rock 4 Love music festival, and gave facility tours to large donor groups. Also: emceed benefit concerts around Memphis because apparently I can't say no to a microphone.</p>
-          <div class="ci-chips">
-            <span class="chip">Event Planning</span><span class="chip">Fundraising</span>
-            <span class="chip">Volunteer Management</span><span class="chip">Community Outreach</span>
-          </div>
+        <div class="ci-t">Development &amp; Events Manager</div>
+        <div class="ci-c">BRIDGES &amp; Church Health &middot; Nonprofit</div>
+        <div class="ci-b">
+          <p>Nearly a decade in nonprofit fundraising across two Memphis organizations doing genuinely important work. At Church Health, which provides healthcare for the uninsured, I planned fundraising events, managed a young professional volunteer committee, oversaw the monthly giving program, assisted with Rock 4 Love music festival, and gave facility tours to large donor groups. Also: emceed benefit concerts around Memphis because apparently I can't say no to a microphone.</p>
+          <div class="chips"><span class="chip">Event Planning</span><span class="chip">Fundraising</span><span class="chip">Volunteer Management</span><span class="chip">Community Outreach</span></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<hr class="full-rule">
+<div class="remote-strip reveal">
+  <div class="rs-text">
+    <h3>Available Remotely &amp; Ready to Travel</h3>
+    <p>Based in Nashville, TN but happy to work from wherever the work is. Remote-first, hybrid, or the occasional in-person, I'm flexible and productive in all of them.</p>
+  </div>
+  <div class="rs-pills">
+    <div class="rs-pill">Remote</div>
+    <div class="rs-pill">Hybrid</div>
+    <div class="rs-pill">Nashville, TN</div>
+    <div class="rs-pill">Open to Travel</div>
+  </div>
+</div>
 
-<div class="beyond-wrap" id="beyond">
-  <div class="beyond-inner">
-    <div class="section-eyebrow reveal">The Full Picture</div>
-    <h2 class="section-h2 reveal">Beyond the <em>Day Job</em></h2>
-    <p class="section-intro reveal">The resume gets you in the door. This is the part that makes you remember me.</p>
-    <div class="cards-grid">
-      <div class="bcard accent-top reveal">
-        <span class="bcard-icon">&#127897;</span>
-        <h3>Radio Host</h3>
-        <div class="bcard-dates">WEVL 89.9FM Memphis &middot; 2011&ndash;2016 &middot; Board Member 2016&ndash;2020</div>
-        <p>Hosted <em>My Morning Mixtape</em> every Wednesday 6&ndash;8am on WEVL 89.9FM &mdash; Memphis' beloved community radio station, streaming worldwide to listeners with excellent taste. Served on the board for four years because if you love something, you show up for it.</p>
+<div class="bsec" id="beyond">
+  <div class="section" style="padding-bottom:0;">
+    <div class="ey reveal">The Full Picture</div>
+    <h2 class="sh2 reveal">Beyond the <em>Day Job</em></h2>
+    <p class="si reveal">The resume gets you in the door. This is the part that makes you remember me.</p>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:0 56px 96px;">
+    <div class="bgrid">
+      <div class="bc reveal"><span class="bc-icon">&#127897;</span><h3>Radio Host</h3><div class="bc-dt">WEVL 89.9FM Memphis &middot; 2011&ndash;2016 &middot; Board 2016&ndash;2020</div><p>Hosted My Morning Mixtape every Wednesday 6&ndash;8am on WEVL 89.9FM, Memphis' beloved community radio station. Served on the board for four years because if you love something, you show up for it.</p></div>
+      <div class="bc reveal"><span class="bc-icon">&#127917;</span><h3>Improv Performer</h3><div class="bc-dt">Third Coast Comedy Club &middot; Nashville &middot; Jan 2025&ndash;Present</div><p>Currently performing long-form improv with troupe Midnight Roast at Third Coast Comedy Club. Three shows coming up in May. No, I can't tell you what's going to happen. That's literally the point.</p></div>
+      <div class="bc reveal"><span class="bc-icon">&#127908;</span><h3>Stand-Up Comedy</h3><div class="bc-dt">Nashville &middot; Aug 2024&ndash;Jun 2025</div><p>Performed stand-up at Third Coast, house shows, and open mics around Nashville. Turns out years of emceeing benefit concerts and hosting a morning radio show was essentially free training. The material? Mostly true stories.</p></div>
+      <div class="bc wide reveal">
+        <span class="bc-icon">&#128240;</span>
+        <h3>Press Mention: Memphis Flyer</h3>
+        <div class="bc-dt">WEVL 40th Anniversary &middot; October 2016</div>
+        <p>Co-organized the WEVL 40 Fest, a full day-long music festival celebrating the station's 40th anniversary. Introduced Julien Baker to the stage. The Memphis Flyer covered it: "People like us because we have passionate, knowledgeable DJs, real people who love music and put their hearts into it. And that's what Amanda, Kelly and Amy have done with the festival."</p>
+        <a href="https://www.memphisflyer.com/wevl-turns-40/" target="_blank">Read the article &rarr;</a>
       </div>
-      <div class="bcard accent-top reveal">
-        <span class="bcard-icon">&#127917;</span>
-        <h3>Improv Performer</h3>
-        <div class="bcard-dates">Third Coast Comedy Club &middot; Nashville &middot; Jan 2025 &ndash; Present</div>
-        <p>Currently performing long-form improv with troupe <strong>Midnight Roast</strong> at Third Coast Comedy Club. Three shows coming up in May. No, I can't tell you what's going to happen. That's literally the point.</p>
-      </div>
-      <div class="bcard accent-top reveal">
-        <span class="bcard-icon">&#127908;</span>
-        <h3>Stand-Up Comedy</h3>
-        <div class="bcard-dates">Nashville &middot; Aug 2024 &ndash; Jun 2025</div>
-        <p>Performed stand-up at Third Coast, house shows, and open mics around Nashville. Turns out years of emceeing nonprofit benefit concerts and hosting a morning radio show was essentially free training. The material? Mostly true stories.</p>
-      </div>
-      <div class="bcard featured reveal">
-        <span class="bcard-icon">&#128240;</span>
-        <div>
-          <h3>Press Mention: Memphis Flyer</h3>
-          <div class="bcard-dates">WEVL 40th Anniversary &middot; October 2016</div>
-          <p>Co-organized the WEVL 40 Fest &mdash; a full day-long music festival celebrating the station's 40th anniversary. Introduced <strong>Julien Baker</strong> to the stage. The Memphis Flyer covered it: <em>"People like us because we have passionate, knowledgeable DJs &mdash; real people who love music and put their hearts into it. And that's what Amanda, Kelly and Amy have done with the festival."</em></p>
-          <a href="https://www.memphisflyer.com/wevl-turns-40/" target="_blank">Read the Memphis Flyer article &rarr;</a>
-        </div>
-      </div>
-      <div class="bcard accent-top-mid reveal">
-        <span class="bcard-icon">&#9992;</span>
-        <h3>Study Abroad &middot; Australia</h3>
-        <div class="bcard-dates">Victoria University &middot; Melbourne &middot; 2004</div>
-        <p>Studied Business Communications in Melbourne. Also: scuba dived the Great Barrier Reef, sailed the Whitsundays, explored Fraser Island, attended Byron Bay Music Festival, visited the Sydney Opera House, and yes &mdash; made a pilgrimage to the Big Banana in Coffs Harbour. No regrets.</p>
-      </div>
-      <div class="bcard accent-top-mid reveal">
-        <span class="bcard-icon">&#128062;</span>
-        <h3>Community &amp; Volunteering</h3>
-        <div class="bcard-dates">Memphis, TN</div>
-        <p>Fostered dogs for the Streetdog Foundation for a couple of years, volunteered at WEVL's annual Blues on the Bluff, and spent nearly a decade working for nonprofits making a real difference in Memphis. Caring about community isn't something I do on the side &mdash; it's just how I'm wired.</p>
-      </div>
-      <div class="bcard accent-top-mid reveal">
-        <span class="bcard-icon">&#127807;</span>
-        <h3>Plant Mom &amp; Nashville Explorer</h3>
-        <div class="bcard-dates">Ongoing &middot; Very Serious Commitment</div>
-        <p>Mother to five house plants (all thriving, mostly). Passionate about finding Nashville's best cold brew, going to concerts and comedy shows, discovering new neighborhoods, and collecting experiences worth talking about.</p>
-      </div>
+      <div class="bc reveal"><span class="bc-icon">&#9992;</span><h3>Study Abroad &middot; Australia</h3><div class="bc-dt">Victoria University &middot; Melbourne &middot; 2004</div><p>Studied Business Communications in Melbourne. Scuba dived the Great Barrier Reef, sailed the Whitsundays, explored Fraser Island, attended Byron Bay Music Festival, and made a pilgrimage to the Big Banana in Coffs Harbour. No regrets.</p></div>
+      <div class="bc reveal"><span class="bc-icon">&#128062;</span><h3>Community &amp; Volunteering</h3><div class="bc-dt">Memphis, TN</div><p>Fostered dogs for the Streetdog Foundation, volunteered at WEVL's Blues on the Bluff, and spent nearly a decade working for nonprofits making a real difference in Memphis. Caring about community isn't something I do on the side, it's just how I'm wired.</p></div>
     </div>
   </div>
 </div>
 
-<hr class="full-rule">
-
-<div class="section" id="skills">
-  <div class="section-eyebrow reveal">Capabilities</div>
-  <h2 class="section-h2 reveal">What I <em>Bring</em></h2>
-  <div class="skills-grid">
-    <div class="sgroup reveal"><h4>Affiliate Marketing</h4><p>Amazon, CJ, Skimlinks, Impact, Awin &mdash; program management, partner relations, reporting, paid campaigns</p></div>
-    <div class="sgroup reveal"><h4>Content &amp; Campaigns</h4><p>Content strategy, editorial planning, multi-channel campaigns, cross-functional collaboration</p></div>
-    <div class="sgroup reveal"><h4>Analytics &amp; Reporting</h4><p>GA4, Looker Studio &mdash; performance tracking, insights, data-driven recommendations</p></div>
-    <div class="sgroup reveal"><h4>CMS / CRM</h4><p>Sitecore, WordPress, Squarespace &mdash; site management, content updates, UX copywriting</p></div>
-    <div class="sgroup reveal"><h4>Email Marketing</h4><p>Salesforce Marketing Cloud, Mailchimp &mdash; strategy, list management, performance reporting</p></div>
-    <div class="sgroup reveal"><h4>Project Management</h4><p>Basecamp, Asana &mdash; agency coordination, redesigns, stakeholder management</p></div>
-    <div class="sgroup reveal"><h4>AI / LLM Tools</h4><p>Claude, ChatGPT &mdash; prompt engineering, content workflows, research, ideation</p></div>
-    <div class="sgroup reveal"><h4>SEO &amp; eCommerce</h4><p>SEMrush, BrightEdge, Kibo &mdash; discoverability, A/B testing, conversion optimization</p></div>
+<div class="sksec" id="skills">
+  <div class="section" style="padding-bottom:40px;">
+    <div class="ey reveal">Capabilities</div>
+    <h2 class="sh2 reveal">What I <em>Bring</em></h2>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:0 56px 96px;">
+    <div class="skgrid">
+      <div class="sg reveal"><h4>Affiliate Marketing</h4><p>Amazon, CJ, Skimlinks, Impact, Awin, program management, partner relations, reporting</p></div>
+      <div class="sg reveal"><h4>Content &amp; Campaigns</h4><p>Content strategy, editorial planning, multi-channel campaigns, cross-functional collaboration</p></div>
+      <div class="sg reveal"><h4>Analytics &amp; Reporting</h4><p>GA4, Looker Studio, performance tracking, insights, data-driven recommendations</p></div>
+      <div class="sg reveal"><h4>CMS / CRM</h4><p>Sitecore, WordPress, Squarespace, site management, content updates, UX copywriting</p></div>
+      <div class="sg reveal"><h4>Email Marketing</h4><p>Salesforce Marketing Cloud, Mailchimp, strategy, list management, performance reporting</p></div>
+      <div class="sg reveal"><h4>Project Management</h4><p>Basecamp, Asana, agency coordination, website redesigns, stakeholder management</p></div>
+      <div class="sg reveal"><h4>AI / LLM Tools</h4><p>Claude, ChatGPT, prompt engineering, content workflows, research, ideation</p></div>
+      <div class="sg reveal"><h4>SEO &amp; eCommerce</h4><p>SEMrush, BrightEdge, Kibo, discoverability, A/B testing, conversion optimization</p></div>
+    </div>
   </div>
 </div>
 
-<div class="contact-wrap" id="contact">
-  <div class="contact-inner">
-    <div class="section-eyebrow reveal">Get in touch</div>
-    <h2 class="section-h2 reveal">Let's <em>Talk</em></h2>
-    <p class="section-intro reveal">Whether you have a role in mind, a brand you think I'd love, or just want to say hi &mdash; my inbox is a friendly place.</p>
-    <div class="contact-buttons reveal">
-      <a href="mailto:kellykraisinger@gmail.com" class="cbtn cbtn-white">&#9993; Email Me</a>
-      <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="cbtn cbtn-outline">LinkedIn</a>
-      <a href="tel:7245166872" class="cbtn cbtn-outline">&#9990; 724-516-6872</a>
+<div class="csec" id="contact">
+  <div style="max-width:560px;margin:0 auto;">
+    <div class="ey reveal">Get in touch</div>
+    <h2 class="sh2 reveal">Let's <em>Talk</em></h2>
+    <p class="si reveal">Whether you have a role in mind, a brand you think I'd love, or just want to say hi, my inbox is a friendly place. Remote, hybrid, or in-person, I'm always open to a great conversation.</p>
+    <div class="cbtns reveal">
+      <a href="mailto:kellykraisinger@gmail.com" class="cbtn cb-gold">Email Me</a>
+      <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="cbtn cb-gh">LinkedIn</a>
+      <a href="tel:7245166872" class="cbtn cb-gh">724-516-6872</a>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="fn">Kelly Kraisinger</div>
-  <p>Nashville, TN &middot; &copy; 2026</p>
+  <p>Nashville, TN &middot; Remote-Ready &middot; &copy; 2026</p>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*70);});
+},{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
