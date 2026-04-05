@@ -7,134 +7,202 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --gold:#C9A96E;--gold-2:#DFC088;--gold-3:#EDD49A;
-  --gold-pale:#FBF7EC;--gold-faint:#FDFAF2;
-  --brown:#4A4238;--brown-2:#7A7268;
-  --ink:#5C5248;--ink-dark:#3A3530;
-  --mid:#6A6258;--muted:#B0AAA0;--rule:#EDE5D4;
-  --cream:#FEFCF8;--warm:#FEFAF2;--sand:#FAF5E8;--white:#FFFFFF;
+  --plum:#4A3A42;
+  --plum-deep:#2E2028;
+  --hdr:#6B5D65;
+  --mauve:#9E8E96;
+  --mauve-hdr:#8A7A82;
+  --mauve-pale:#EAE4E7;
+  --mauve-bg:#EEE8EC;
+  --mauve-light:#C4AFBA;
+  --gold:#C4973A;
+  --gold-2:#D4AA5A;
+  --ink:#2A2628;
+  --mid:#585258;
+  --muted:#9A9298;
+  --rule:#E0D8DC;
+  --white:#FFFFFF;
+  --warm:#FDFAFC;
+  --sand:#F5F0F3;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink-dark);line-height:1.65;-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',sans-serif;background:var(--warm);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(254,252,248,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);}
-.nlogo{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--gold);letter-spacing:0.3px;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(253,250,252,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);}
+.nlogo{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--plum);letter-spacing:0.3px;}
 .nlinks{display:flex;gap:28px;list-style:none;}
 .nlinks a{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nlinks a:hover{color:var(--gold);}
+.nlinks a:hover{color:var(--mauve-hdr);}
 
-.hero{min-height:100vh;background:var(--warm);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.13) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-150px;left:40%;width:500px;height:500px;background:radial-gradient(circle,rgba(201,169,110,0.07) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+/* HERO — drama restored with deep plum right panel */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
 
-.hl{padding:130px 64px 80px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;border-right:1px solid var(--rule);}
-.hl-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:36px;}
-.hl-badge::before{content:'';width:28px;height:1px;background:var(--gold-3);}
-.hn{font-family:'Outfit',sans-serif;font-size:clamp(72px,8vw,120px);font-weight:900;line-height:1.0;letter-spacing:-3px;margin-bottom:0;}
-.hn .first{color:var(--ink);display:block;}
-.hn .last{color:var(--gold);display:block;}
-.htag{font-family:'Outfit',sans-serif;font-size:clamp(14px,1.3vw,17px);font-weight:400;color:var(--muted);margin-top:28px;line-height:1.6;}
-.hl-remote{display:inline-flex;align-items:center;gap:8px;margin-top:32px;background:var(--gold-pale);border:1px solid var(--gold-3);padding:8px 18px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:0.5px;color:var(--brown);}
-.hl-remote::before{content:'✦';font-size:10px;color:var(--gold);}
+.hl{
+  padding:130px 64px 80px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--warm);
+  position:relative;z-index:1;
+}
+.hl::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--mauve-pale) 30%,var(--mauve) 60%,transparent);
+}
+.hl-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--mauve-hdr);margin-bottom:40px;}
+.hl-badge::before{content:'';width:32px;height:1px;background:var(--mauve-light);}
 
-.hr{padding:130px 56px 80px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
-.hr-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;}
-.hr-bio{font-size:18px;font-weight:300;line-height:1.9;color:var(--mid);margin-bottom:48px;max-width:400px;}
-.hr-bio strong{color:var(--gold);font-weight:600;}
-.hcontacts{display:flex;flex-direction:column;gap:14px;}
-.hc{font-size:14px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s;}
-.hc:hover{color:var(--gold);}
-.hc-dot{width:4px;height:4px;border-radius:50%;background:var(--gold-3);flex-shrink:0;}
+.hn{font-family:'Outfit',sans-serif;font-size:clamp(72px,8vw,120px);font-weight:900;line-height:0.95;letter-spacing:-3px;}
+.hn .first{color:var(--mauve-light);display:block;}
+.hn .last{color:var(--plum);display:block;}
 
-.ticker{background:var(--gold);overflow:hidden;padding:12px 0;}
-.ticker-track{display:flex;white-space:nowrap;animation:tick 40s linear infinite;width:max-content;}
+.htag{font-family:'Outfit',sans-serif;font-size:clamp(14px,1.2vw,16px);font-weight:400;color:var(--muted);margin-top:28px;line-height:1.7;letter-spacing:0.3px;}
+.hl-remote{display:inline-flex;align-items:center;gap:8px;margin-top:36px;background:var(--mauve-pale);border:1px solid var(--mauve);padding:9px 20px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--hdr);}
+.hl-remote::before{content:'✦';font-size:9px;color:var(--mauve);}
+
+/* Right hero panel — deep plum with soft glow */
+.hr{
+  padding:130px 56px 80px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--plum-deep);
+  position:relative;overflow:hidden;
+}
+.hr::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(196,175,186,0.08) 0%,transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.hr::after{
+  content:'';position:absolute;bottom:-80px;left:-60px;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(196,175,186,0.05) 0%,transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.hr-inner{position:relative;z-index:1;}
+.hr-label{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:36px;}
+.hr-bio{font-size:18px;font-weight:300;line-height:1.95;color:rgba(255,255,255,0.62);margin-bottom:52px;max-width:400px;}
+.hr-bio strong{color:var(--mauve-light);font-weight:500;}
+.hcontacts{display:flex;flex-direction:column;gap:16px;}
+.hc{font-size:14px;color:rgba(255,255,255,0.38);text-decoration:none;display:flex;align-items:center;gap:12px;transition:color .2s;letter-spacing:0.2px;}
+.hc:hover{color:var(--mauve-light);}
+.hc-dot{width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;}
+
+/* TICKER */
+.ticker{background:var(--plum);overflow:hidden;padding:13px 0;border-top:1px solid rgba(255,255,255,0.06);}
+.ticker-track{display:flex;white-space:nowrap;animation:tick 42s linear infinite;width:max-content;}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.ti{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:0 20px;display:inline-flex;align-items:center;gap:20px;}
-.ti.pop{color:white;}
-.ti::after{content:'·';color:rgba(255,255,255,0.3);margin-left:20px;}
+.ti{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0 22px;display:inline-flex;align-items:center;}
+.ti.pop{color:var(--mauve-light);}
+.ti::after{content:'·';color:rgba(255,255,255,0.2);margin-left:22px;}
 
+/* SECTIONS */
 .section{max-width:1100px;margin:0 auto;padding:96px 56px;}
-.ey{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
-.ey::before{content:'';width:24px;height:1px;background:var(--gold-3);}
-.sh2{font-family:'Outfit',sans-serif;font-size:clamp(44px,5vw,68px);font-weight:800;line-height:1.0;color:var(--ink);letter-spacing:-2px;margin-bottom:16px;}
-.sh2 em{font-style:normal;color:var(--gold);}
+.ey{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--mauve-hdr);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.ey::before{content:'';width:24px;height:1px;background:var(--mauve-light);}
+
+/* Section headings — bigger contrast between main word and italic pop */
+.sh2{font-family:'Outfit',sans-serif;font-size:clamp(46px,5vw,70px);font-weight:800;line-height:0.95;color:var(--plum);letter-spacing:-2.5px;margin-bottom:16px;}
+.sh2 em{font-style:italic;color:var(--mauve-light);font-weight:300;letter-spacing:-1px;}
+
 .si{font-size:16px;font-weight:300;color:var(--mid);max-width:500px;line-height:1.85;margin-bottom:60px;}
 .divider{border:none;border-top:1px solid var(--rule);margin:0 56px;}
 
+/* CAREER */
 .ci{display:grid;grid-template-columns:180px 1fr;gap:0 52px;padding:52px 0;border-bottom:1px solid var(--rule);}
 .ci:last-child{border-bottom:none;}
-.ci-d{font-size:12px;font-weight:600;color:var(--gold-2);margin-bottom:3px;}
+.ci-d{font-size:12px;font-weight:600;color:var(--mauve-hdr);margin-bottom:3px;}
 .ci-l{font-size:11px;color:var(--muted);}
-.ci-t{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--ink-dark);line-height:1.1;margin-bottom:5px;letter-spacing:-0.5px;}
-.ci-c{font-size:11px;font-weight:600;color:var(--gold);margin-bottom:18px;letter-spacing:1px;text-transform:uppercase;}
+.ci-t{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--plum);line-height:1.1;margin-bottom:5px;letter-spacing:-0.5px;}
+.ci-c{font-size:11px;font-weight:600;color:var(--mauve);margin-bottom:18px;letter-spacing:1px;text-transform:uppercase;}
 .ci-b{font-size:15px;font-weight:300;color:var(--mid);line-height:1.85;}
 .ci-b p{margin-bottom:12px;}
 .ci-b ul{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:10px;}
 .ci-b li{padding-left:20px;position:relative;font-size:14.5px;}
-.ci-b li::before{content:'';position:absolute;left:0;top:10px;width:10px;height:1px;background:var(--gold-3);}
+.ci-b li::before{content:'';position:absolute;left:0;top:10px;width:10px;height:1px;background:var(--mauve-light);}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
-.chip{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;background:var(--gold-faint);color:var(--brown);border-radius:2px;border:1px solid var(--rule);}
+.chip{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;background:var(--mauve-pale);color:var(--hdr);border-radius:2px;border:1px solid var(--rule);}
 
-.remote-strip{background:var(--brown);padding:64px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;}
-.rs-text h3{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:white;letter-spacing:-0.5px;margin-bottom:8px;}
-.rs-text p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.7;}
+/* REMOTE STRIP */
+.remote-strip{background:var(--plum-deep);padding:72px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;}
+.remote-strip::before{content:'';position:absolute;top:-100px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(196,175,186,0.06) 0%,transparent 60%);border-radius:50%;}
+.rs-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px;width:100%;}
+.rs-text h3{font-family:'Outfit',sans-serif;font-size:30px;font-weight:800;color:white;letter-spacing:-1px;margin-bottom:10px;}
+.rs-text p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.75;}
 .rs-pills{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0;}
-.rs-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:9px 20px;border-radius:999px;white-space:nowrap;}
+.rs-pill{background:rgba(196,175,186,0.12);border:1px solid rgba(196,175,186,0.3);color:var(--mauve-light);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:10px 22px;border-radius:999px;white-space:nowrap;transition:background .2s;}
+.rs-pill:hover{background:rgba(196,175,186,0.2);}
 
-.bsec{background:var(--sand);padding:96px 0;}
-.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.bc{background:var(--white);padding:36px 32px;border-radius:4px;border:1px solid var(--rule);transition:box-shadow .25s,transform .25s,border-color .25s;}
-.bc:hover{box-shadow:0 12px 40px rgba(201,169,110,0.12);transform:translateY(-4px);border-color:var(--gold-3);}
-.bc.wide{grid-column:span 2;background:var(--gold-faint);border-color:var(--gold-3);}
-.bc.wide:hover{box-shadow:0 12px 40px rgba(201,169,110,0.18);}
-.bc-icon{font-size:22px;margin-bottom:18px;display:block;}
-.bc h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:var(--ink-dark);margin-bottom:6px;letter-spacing:-0.2px;}
-.bc.wide h3{color:var(--gold);}
+/* BEYOND */
+.bsec{background:var(--mauve-bg);padding:96px 0;}
+.bsec .ey::before{background:var(--mauve-light);}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.bc{background:var(--white);padding:36px 32px;border-radius:6px;border:1px solid var(--rule);border-top:3px solid var(--mauve-pale);transition:box-shadow .3s,transform .3s,border-top-color .3s;}
+.bc:hover{box-shadow:0 16px 48px rgba(74,58,66,0.12);transform:translateY(-5px);border-top-color:var(--mauve);}
+.bc.wide{grid-column:span 2;background:var(--plum-deep);border:1px solid rgba(255,255,255,0.06);border-top:3px solid var(--mauve);}
+.bc.wide:hover{box-shadow:0 16px 48px rgba(46,32,40,0.25);transform:translateY(-5px);border-top-color:var(--mauve-light);}
+.bc-icon{font-size:24px;margin-bottom:18px;display:block;}
+.bc h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:var(--plum);margin-bottom:6px;}
+.bc.wide h3{color:var(--mauve-light);}
 .bc-dt{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
-.bc.wide .bc-dt{color:var(--gold-2);}
-.bc p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.75;}
-.bc a{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-3);padding-bottom:1px;transition:color .2s;}
-.bc a:hover{color:var(--brown);}
+.bc.wide .bc-dt{color:rgba(196,175,186,0.5);}
+.bc p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.8;}
+.bc.wide p{color:rgba(255,255,255,0.55);}
+.bc a{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve-light);text-decoration:none;border-bottom:1px solid rgba(196,175,186,0.4);padding-bottom:2px;transition:color .2s,border-color .2s;}
+.bc a:hover{color:white;border-color:rgba(255,255,255,0.4);}
 
-.sksec{background:var(--cream);padding:96px 0;}
-.skgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.sg{background:var(--white);padding:28px 24px;border-radius:4px;border:1px solid var(--rule);border-top:2px solid var(--gold-3);transition:border-top-color .2s,box-shadow .2s;}
-.sg:hover{border-top-color:var(--gold);box-shadow:0 4px 20px rgba(201,169,110,0.1);}
-.sg h4{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.sg p{font-size:13px;font-weight:300;color:var(--mid);line-height:1.65;}
+/* SKILLS — editorial grid with alternating mauve wash */
+.sksec{background:var(--warm);padding:96px 0;}
+.skgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);}
+.sg{padding:32px 28px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .25s;}
+.sg:hover{background:var(--sand);}
+.sg:nth-child(4n){border-right:none;}
+.sg:nth-child(n+5){border-bottom:none;}
+.sg.tinted{background:var(--mauve-pale);}
+.sg.tinted:hover{background:var(--mauve-bg);}
+.sg h4{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:12px;}
+.sg p{font-size:13px;font-weight:300;color:var(--mid);line-height:1.7;}
 
-.csec{background:var(--warm);padding:120px 56px;text-align:center;position:relative;overflow:hidden;}
-.csec::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,110,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
-.csec .ey{justify-content:center;position:relative;z-index:1;}
-.csec .sh2{position:relative;z-index:1;}
-.csec .si{margin:0 auto 52px;position:relative;z-index:1;}
-.cbtns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
-.cbtn{padding:16px 44px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block;border-radius:2px;}
-.cb-gold{background:var(--gold);color:white;}
-.cb-gold:hover{background:var(--gold-2);}
-.cb-gh{border:1.5px solid var(--rule);color:var(--mid);}
-.cb-gh:hover{border-color:var(--gold-3);color:var(--gold);}
+/* CONTACT */
+.csec{background:var(--plum-deep);padding:120px 56px;text-align:center;position:relative;overflow:hidden;}
+.csec::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(196,175,186,0.07) 0%,transparent 60%);border-radius:50%;pointer-events:none;}
+.csec .ey{justify-content:center;color:rgba(196,175,186,0.5);position:relative;z-index:1;}
+.csec .ey::before{background:rgba(196,175,186,0.3);}
+.csec .sh2{color:white;position:relative;z-index:1;margin-bottom:16px;}
+.csec .sh2 em{color:var(--mauve-light);}
+.csec .si{margin:0 auto 52px;color:rgba(255,255,255,0.45);position:relative;z-index:1;}
+.cbtns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1;}
+.cbtn{padding:16px 44px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:all .25s;display:inline-block;border-radius:2px;}
+.cb-main{background:var(--mauve-light);color:var(--plum-deep);}
+.cb-main:hover{background:white;color:var(--plum);}
+.cb-gh{border:1.5px solid rgba(196,175,186,0.3);color:rgba(255,255,255,0.7);}
+.cb-gh:hover{border-color:var(--mauve-light);color:var(--mauve-light);}
 
-footer{background:var(--sand);padding:28px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);}
-.fn{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--gold);letter-spacing:-0.2px;}
-footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
+footer{background:var(--plum);padding:28px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);}
+.fn{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--mauve-light);}
+footer p{font-size:11px;color:rgba(196,175,186,0.4);letter-spacing:1px;}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 @media(max-width:900px){
   nav{padding:0 24px;}.nlinks{display:none;}
   .hero{grid-template-columns:1fr;}
   .hl{padding:100px 24px 48px;}
-  .hr{padding:48px 24px 72px;border-top:1px solid var(--rule);}
+  .hl::after{display:none;}
+  .hr{padding:48px 24px 72px;}
   .section{padding:64px 24px;}
   .bgrid{grid-template-columns:1fr;}
   .bc.wide{grid-column:span 1;}
   .skgrid{grid-template-columns:repeat(2,1fr);}
+  .sg:nth-child(4n){border-right:1px solid var(--rule);}
+  .sg:nth-child(2n){border-right:none;}
+  .sg:nth-child(n+5){border-bottom:1px solid var(--rule);}
+  .sg:nth-child(n+7){border-bottom:none;}
   .ci{grid-template-columns:1fr;gap:10px;}
   .divider{margin:0 24px;}
-  .remote-strip{flex-direction:column;padding:48px 24px;}
+  .remote-strip{padding:48px 24px;}
+  .rs-inner{flex-direction:column;}
   .csec{padding:80px 24px;}
   footer{padding:24px;flex-direction:column;gap:8px;text-align:center;}
 }
@@ -164,19 +232,21 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
     <div class="hl-remote">Available for remote &amp; hybrid roles</div>
   </div>
   <div class="hr">
-    <div class="hr-label">About</div>
-    <p class="hr-bio">I'm a digital marketer with <strong>10+ years of experience</strong> helping brands grow. I show up with energy, curiosity, and a genuine love for the work, whether that's building affiliate programs, running cross-functional campaigns, or finding the story in the data.</p>
-    <div class="hcontacts">
-      <a href="mailto:kellykraisinger@gmail.com" class="hc"><div class="hc-dot"></div>kellykraisinger@gmail.com</a>
-      <a href="tel:7245166872" class="hc"><div class="hc-dot"></div>724-516-6872</a>
-      <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="hc"><div class="hc-dot"></div>linkedin.com/in/kelly-kraisinger</a>
+    <div class="hr-inner">
+      <div class="hr-label">About</div>
+      <p class="hr-bio">I'm a digital marketer with <strong>10+ years of experience</strong> helping brands grow. I show up with energy, curiosity, and a genuine love for the work, whether that's building affiliate programs, running cross-functional campaigns, or finding the story in the data.</p>
+      <div class="hcontacts">
+        <a href="mailto:kellykraisinger@gmail.com" class="hc"><div class="hc-dot"></div>kellykraisinger@gmail.com</a>
+        <a href="tel:7245166872" class="hc"><div class="hc-dot"></div>724-516-6872</a>
+        <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="hc"><div class="hc-dot"></div>linkedin.com/in/kelly-kraisinger</a>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti pop">Stand-Up Comedy</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti pop">10+ Years Digital Marketing</span><span class="ti">Nashville, TN</span><span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti pop">Stand-Up Comedy</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti pop">10+ Years Digital Marketing</span><span class="ti">Nashville, TN</span>
+    <span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti">Stand-Up Comedy</span><span class="ti pop">Improv Performer</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti">10+ Years Digital Marketing</span><span class="ti pop">Nashville, TN</span><span class="ti">Study Abroad Melbourne</span><span class="ti pop">Affiliate Marketing</span><span class="ti">Property Brothers / HGTV</span><span class="ti pop">4+ Years Celebrity Brand</span><span class="ti">Remote &amp; Hybrid Ready</span><span class="ti pop">Radio Host</span><span class="ti">Stand-Up Comedy</span><span class="ti pop">Improv Performer</span><span class="ti">Festival Organizer</span><span class="ti pop">Nonprofit Fundraiser</span><span class="ti">10+ Years Digital Marketing</span><span class="ti pop">Nashville, TN</span><span class="ti">Study Abroad Melbourne</span>
   </div>
 </div>
 
@@ -196,7 +266,6 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
           <p>Four years working behind the scenes for one of HGTV's most recognizable brands. Think: 150,000 monthly website sessions, a 100,000 subscriber newsletter, affiliate programs across major retail platforms, and yours truly keeping it all moving.</p>
           <ul>
             <li>Built and grew the affiliate marketing program across Amazon, CJ, Skimlinks, Impact, and Awin, coordinating with account reps, training internal teams, and overseeing paid retail campaigns up to $20,000.</li>
-            <li>Introduced and maintained SEO strategies for drewandjonathan.com, the Property Brothers' primary fan and lifestyle destination.</li>
             <li>Analyzed content performance data and provided recommendations to the Property Brothers' social team (12 million+ followers) on what to promote to drive web sessions and product sales.</li>
             <li>Worked closely with the Editorial Team on newsletter strategy for 100,000+ subscribers, turning performance data into insights that shaped content decisions.</li>
             <li>Managed full project lifecycle across agency engagements, internal campaigns, and a complete website redesign, keeping stakeholders aligned and timelines on track.</li>
@@ -254,15 +323,17 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
 </div>
 
 <div class="remote-strip reveal">
-  <div class="rs-text">
-    <h3>Available Remotely &amp; Ready to Travel</h3>
-    <p>Based in Nashville, TN but happy to work from wherever the work is. Remote-first, hybrid, or the occasional in-person, I'm flexible and productive in all of them.</p>
-  </div>
-  <div class="rs-pills">
-    <div class="rs-pill">Remote</div>
-    <div class="rs-pill">Hybrid</div>
-    <div class="rs-pill">Nashville, TN</div>
-    <div class="rs-pill">Open to Travel</div>
+  <div class="rs-inner">
+    <div class="rs-text">
+      <h3>Remote &amp; Hybrid Ready</h3>
+      <p>Remote-first by preference, hybrid by flexibility. Based in Nashville but fully equipped to work from anywhere. Open to travel when the work calls for it.</p>
+    </div>
+    <div class="rs-pills">
+      <div class="rs-pill">Remote-First</div>
+      <div class="rs-pill">Hybrid</div>
+      <div class="rs-pill">Nashville, TN</div>
+      <div class="rs-pill">Open to Travel</div>
+    </div>
   </div>
 </div>
 
@@ -298,12 +369,12 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
   <div style="max-width:1100px;margin:0 auto;padding:0 56px 96px;">
     <div class="skgrid">
       <div class="sg reveal"><h4>Affiliate Marketing</h4><p>Amazon, CJ, Skimlinks, Impact, Awin, program management, partner relations, reporting</p></div>
-      <div class="sg reveal"><h4>Content &amp; Campaigns</h4><p>Content strategy, editorial planning, multi-channel campaigns, cross-functional collaboration</p></div>
+      <div class="sg tinted reveal"><h4>Content &amp; Campaigns</h4><p>Content strategy, editorial planning, multi-channel campaigns, cross-functional collaboration</p></div>
       <div class="sg reveal"><h4>Analytics &amp; Reporting</h4><p>GA4, Looker Studio, performance tracking, insights, data-driven recommendations</p></div>
-      <div class="sg reveal"><h4>CMS / CRM</h4><p>Sitecore, WordPress, Squarespace, site management, content updates, UX copywriting</p></div>
-      <div class="sg reveal"><h4>Email Marketing</h4><p>Salesforce Marketing Cloud, Mailchimp, strategy, list management, performance reporting</p></div>
+      <div class="sg tinted reveal"><h4>CMS Platforms &amp; Web Management</h4><p>Sitecore, WordPress, Squarespace, site management, content updates, UX copywriting</p></div>
+      <div class="sg tinted reveal"><h4>Email Marketing &amp; CRM Management</h4><p>Salesforce Marketing Cloud, Mailchimp, strategy, list management, performance reporting</p></div>
       <div class="sg reveal"><h4>Project Management</h4><p>Basecamp, Asana, agency coordination, website redesigns, stakeholder management</p></div>
-      <div class="sg reveal"><h4>AI / LLM Tools</h4><p>Claude, ChatGPT, prompt engineering, content workflows, research, ideation</p></div>
+      <div class="sg tinted reveal"><h4>AI / LLM Tools</h4><p>Claude, ChatGPT, prompt engineering, content workflows, research, ideation</p></div>
       <div class="sg reveal"><h4>SEO &amp; eCommerce</h4><p>SEMrush, BrightEdge, Kibo, discoverability, A/B testing, conversion optimization</p></div>
     </div>
   </div>
@@ -315,7 +386,7 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:1px;}
     <h2 class="sh2 reveal">Let's <em>Talk</em></h2>
     <p class="si reveal">Whether you have a role in mind, a brand you think I'd love, or just want to say hi, my inbox is a friendly place. Remote, hybrid, or in-person, I'm always open to a great conversation.</p>
     <div class="cbtns reveal">
-      <a href="mailto:kellykraisinger@gmail.com" class="cbtn cb-gold">Email Me</a>
+      <a href="mailto:kellykraisinger@gmail.com" class="cbtn cb-main">Email Me</a>
       <a href="https://www.linkedin.com/in/kelly-kraisinger-1938353/" target="_blank" class="cbtn cb-gh">LinkedIn</a>
       <a href="tel:7245166872" class="cbtn cb-gh">724-516-6872</a>
     </div>
